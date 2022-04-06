@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="small_fixture">
+    <pose>0 0 0 0 -0 0</pose>
+    <static>true</static>
+    <link name="link">
+        <inertial>
+        <pose>-0 0 0 0 0 0</pose>
+          <mass>0.015</mass>
+          <inertia>
+            <ixx>4.15e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.407e-6</iyy>
+          <iyz>0</iyz>
+          <izz>2.407e-6</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>-0.12 0 -0.11 0 0 3.14</pose>
+          <geometry>
+     	    <mesh>
+              <uri>model://normal_size_fixture/meshes/transparent box miniv3.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+	    <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+    	    <emissive>0 0 0 0</emissive>
+	  </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="RFID_tag">
+    <pose>0 0 0 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+        <inertial>
+        <pose>0.12 0 -0.11 0 0 0</pose>
+          <mass>0.005</mass>
+            <inertia>
+              <ixx>1.15e-6</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.407e-6</iyy>
+            <iyz>0</iyz>
+            <izz>1.407e-6</izz>
+            </inertia>
+         </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </visual>
+      </link>
+  </model>
+</sdf>

@@ -1,0 +1,8 @@
+prefix=/home/lybot/ground_robot_sim/src/RFID_tag_plugin/cmake-build-debug/devel
+
+Name: RFID_tag_plugin
+Description: Description of RFID_tag_plugin
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

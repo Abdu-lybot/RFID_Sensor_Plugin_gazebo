@@ -1,0 +1,31 @@
+########################### namings of frames ##########################
+
+odom_frame_name: "odom_sim"
+baselink_frame_name: "base_link_sim"
+
+########################### robot odometry topic ##########################
+#odomtopic: "/mavros/local_position/pose"
+odomtopic: "/odom"
+
+
+########################### Different variables ##########################
+imu: 
+gps: 
+local_pose:
+current_state:
+current_heading: 
+local_enu_position:
+
+cur_target_pose:
+global_target:
+
+received_new_task: False
+arm_state: False
+offboard_state: False
+received_imu: False
+frame: BODY
+
+state:
+
+
+

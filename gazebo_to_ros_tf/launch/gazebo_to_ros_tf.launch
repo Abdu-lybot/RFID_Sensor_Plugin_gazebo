@@ -1,0 +1,60 @@
+<launch>
+
+ 	<node pkg="gazebo_to_ros_tf" name="world_to_ros" type="world_to_ros.py" output="screen"> 
+  	</node>
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="map1_to_odom_publisher"
+		args="0 0 0 0 0 0 map odom_sim 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="base_link_to_antenna_publisher2"
+		args="0.12 0 0.5 0 0 0 base_link_sim antenna_1 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="base_link_to_antenna_publisher1"
+		args="-0.12 0 0.5 3.14 0 0 base_link_sim antenna_2 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="base_link_to_antenna_publisher3"
+		args="0 0.12 0.5 1.57 0 0 base_link_sim antenna_3 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="base_link_to_antenna_publisher4"
+		args="0 -0.12 0.5 -1.57 0 0 base_link_sim antenna_4 100" />
+	<!--node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster7"
+		args="5 0 -0.11 0 0 0 diptera_antenna_front base_cone_point_front 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster8"
+		args="5 0 -0.11 0 0 0 diptera_antenna_back base_cone_point_back 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster9"
+		args="5 0 -0.11 0 0 0 diptera_antenna_right base_cone_point_right 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster10"
+		args="5 0 -0.11 0 0 0 diptera_antenna_left base_cone_point_left 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster11"
+		args="5 2 -0.2 0 0 0 diptera_antenna_front edge_cone_point_front 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster12"
+		args="5 2 -0.2 0 0 0 diptera_antenna_back edge_cone_point_back 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster13"
+		args="5 2 -0.2 0 0 0 diptera_antenna_right edge_cone_point_right 100" />
+	<node pkg="tf"
+		type="static_transform_publisher"
+		name="link1_broadcaster14"
+		args="5 2 -0.2 0 0 0 diptera_antenna_left edge_cone_point_left 100" />-->
+	<node pkg="tf" type="static_transform_publisher" name="camera_origin" args="0 0 0 1.57 3.15 1.57 base_link_sim camera_link 100"/>
+	<node pkg="tf" type="static_transform_publisher" name="camera_originz" args="0 0 0 0 0 0 base_link_sim camera_pink 100"/>
+
+</launch>

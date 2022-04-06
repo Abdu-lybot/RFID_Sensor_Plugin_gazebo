@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug/devel/setup.sh

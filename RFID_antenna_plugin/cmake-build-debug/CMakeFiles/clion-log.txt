@@ -1,0 +1,120 @@
+/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -G Ninja /home/lybot/ground_robot_sim/src/RFID_antenna_plugin
+-- Using CATKIN_DEVEL_PREFIX: /home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug/devel
+-- Using CMAKE_PREFIX_PATH: _PATH;/opt/ros/melodic;
+-- This workspace overlays: /opt/ros/melodic
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug/test_results
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+CMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:41 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:48 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.29
+-- BUILD_SHARED_LIBS is on
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+CMake Warning (dev) at /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (PkgConfig)
+  does not match the name of the calling package (gazebo).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake:70 (find_package_handle_standard_args)
+  /usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake:30 (include)
+  CMakeLists.txt:23 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: /usr/include (found suitable version "1.65.1", minimum required is "1.40.0") found components: thread signals system filesystem program_options regex iostreams date_time chrono atomic 
+-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found version "3.0.0") 
+-- Found Boost: /usr/include (found version "1.65.1")  
+-- Looking for OGRE...
+-- Found Ogre Ghadamon (1.9.0)
+-- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+CMake Warning (dev) at /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake:1481 (if):
+  Policy CMP0054 is not set: Only interpret if() arguments as variables or
+  keywords when unquoted.  Run "cmake --help-policy CMP0054" for policy
+  details.  Use the cmake_policy command to set the policy and suppress this
+  warning.
+
+  Quoted variables like "chrono" will no longer be dereferenced when the
+  policy is set to NEW.  Since the policy is not set the OLD behavior will be
+  used.
+Call Stack (most recent call first):
+  /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake:2087 (_Boost_MISSING_DEPENDENCIES)
+  /usr/share/OGRE/cmake/modules/FindOGRE.cmake:318 (find_package)
+  /usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake:175 (find_package)
+  CMakeLists.txt:23 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Looking for OGRE_Paging...
+-- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+-- Looking for OGRE_Terrain...
+-- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+-- Looking for OGRE_Property...
+-- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+-- Looking for OGRE_RTShaderSystem...
+-- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+-- Looking for OGRE_Volume...
+-- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+-- Looking for OGRE_Overlay...
+-- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found suitable version "3.0.0", minimum required is "2.3.0") 
+-- Config-file not installed for ZeroMQ -- checking for pkg-config
+-- Checking for module 'libzmq >= 4'
+--   Found libzmq , version 4.2.5
+-- Checking for module 'uuid'
+--   Found uuid, version 2.31.1
+-- Found UUID: TRUE  
+-- Checking for module 'tinyxml2'
+--   Found tinyxml2, version 6.0.0
+-- Looking for dlfcn.h - found
+-- Looking for libdl - found
+-- FreeImage.pc not found, we will search for FreeImage_INCLUDE_DIRS and FreeImage_LIBRARIES
+-- Found UUID: TRUE  
+-- Checking for module 'gts'
+--   Found gts, version 0.7.6
+-- Checking for module 'libswscale'
+--   Found libswscale, version 4.8.100
+-- Checking for module 'libavdevice >= 56.4.100'
+--   Found libavdevice , version 57.10.100
+-- Checking for module 'libavformat'
+--   Found libavformat, version 57.83.100
+-- Checking for module 'libavcodec'
+--   Found libavcodec, version 57.107.100
+-- Checking for module 'libavutil'
+--   Found libavutil, version 55.78.100
+-- Checking for module 'jsoncpp'
+--   Found jsoncpp, version 1.7.4
+-- Checking for module 'yaml-0.1'
+--   Found yaml-0.1, version 0.1.7
+-- Checking for module 'libzip'
+--   Found libzip, version 1.1.2
+WARNING: Package name "RFID_antenna_plugin" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug

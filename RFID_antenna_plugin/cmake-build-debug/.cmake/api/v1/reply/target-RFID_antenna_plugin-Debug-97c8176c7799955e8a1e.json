@@ -1,0 +1,998 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "devel/lib/libRFID_antenna_plugin.so"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"add_definitions",
+			"find_package",
+			"include",
+			"configure_shared_library_build_settings",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"/usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake",
+			"/opt/ros/melodic/share/rosconsole/cmake/rosconsole-extras.cmake",
+			"/opt/ros/melodic/share/rosconsole/cmake/rosconsoleConfig.cmake",
+			"/opt/ros/melodic/share/roscpp/cmake/roscppConfig.cmake",
+			"/opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake",
+			"/opt/ros/melodic/share/catkin/cmake/tools/libraries.cmake",
+			"/opt/ros/melodic/share/catkin/cmake/all.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 139,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 162,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 23,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 100,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 106,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"file" : 5,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 76,
+				"parent" : 8
+			},
+			{
+				"file" : 4,
+				"parent" : 9
+			},
+			{
+				"command" : 3,
+				"file" : 4,
+				"line" : 197,
+				"parent" : 10
+			},
+			{
+				"file" : 3,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 222,
+				"parent" : 12
+			},
+			{
+				"file" : 2,
+				"parent" : 13
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 12,
+				"parent" : 14
+			},
+			{
+				"command" : 4,
+				"file" : 5,
+				"line" : 20,
+				"parent" : 8
+			},
+			{
+				"file" : 7,
+				"parent" : 16
+			},
+			{
+				"command" : 5,
+				"file" : 7,
+				"line" : 174,
+				"parent" : 17
+			},
+			{
+				"command" : 2,
+				"file" : 6,
+				"line" : 18,
+				"parent" : 18
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 8,
+				"parent" : 14
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 132,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-I/usr/include/uuid"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-I/usr/include/x86_64-linux-gnu"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 5,
+					"define" : "LIBBULLET_VERSION=2.87"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "LIBBULLET_VERSION_GT_282"
+				},
+				{
+					"define" : "RFID_antenna_plugin_EXPORTS"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "ROSCONSOLE_BACKEND_LOG4CXX"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "ROS_BUILD_SHARED_LIBS=1"
+				},
+				{
+					"backtrace" : 20,
+					"define" : "ROS_PACKAGE_NAME=\"RFID_antenna_plugin\""
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 21,
+					"path" : "/opt/ros/melodic/include"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/usr/include/gazebo-9"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/usr/include/bullet"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/usr/include/simbody"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/usr/include/sdformat-6.0"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/usr/include/OGRE"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/usr/include/OGRE/Terrain"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/usr/include/OGRE/Paging"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/lybot/ground_robot_sim/src/RFID_antenna_plugin/third_party/yaml-cpp/include"
+				},
+				{
+					"backtrace" : 21,
+					"isSystem" : true,
+					"path" : "/usr/include/ignition/math4"
+				},
+				{
+					"backtrace" : 21,
+					"isSystem" : true,
+					"path" : "/usr/include/ignition/transport4"
+				},
+				{
+					"backtrace" : 21,
+					"isSystem" : true,
+					"path" : "/usr/include/ignition/msgs1"
+				},
+				{
+					"backtrace" : 21,
+					"isSystem" : true,
+					"path" : "/usr/include/ignition/common1"
+				},
+				{
+					"backtrace" : 21,
+					"isSystem" : true,
+					"path" : "/usr/include/ignition/fuel_tools1"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/usr/include/uuid"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "yaml-cpp::@0ed292c5ca50a82ca693"
+		}
+	],
+	"id" : "RFID_antenna_plugin::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/opt/ros/melodic/lib:/home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug/third_party/yaml-cpp",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libroslib.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librospack.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpython2.7",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_program_options",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-ltinyxml2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libtf.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libtf2_ros.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libactionlib.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libmessage_filters.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libroscpp.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_filesystem",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libxmlrpcpp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libtf2.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libroscpp_serialization.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole_log4cxx.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole_backend_interface.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-llog4cxx",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_regex",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librostime.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libcpp_common.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_system",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_thread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_chrono",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_date_time",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_atomic",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lBulletSoftBody",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lBulletDynamics",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lBulletCollision",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lLinearMath",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lSimTKsimbody",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lSimTKmath",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lSimTKcommon",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lblas",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-llapack",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lblas",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lrt",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_client",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_gui",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_sensors",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_rendering",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_physics",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_ode",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_transport",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_msgs",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_util",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_common",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_gimpact",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_opcode",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_opende_ou",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_thread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_signals",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_system",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_filesystem",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_program_options",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_regex",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_iostreams",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_date_time",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_chrono",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_atomic",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lprotobuf",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lsdformat",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lOgreMain",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_thread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_date_time",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_system",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_atomic",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_chrono",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_chrono",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lOgreTerrain",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lOgrePaging",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libignition-transport4.so.4.0.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libignition-msgs1.so.1.0.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libignition-common1.so.1.0.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.0.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "third_party/yaml-cpp/libyaml-cppd.so.0.7.0",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_program_options",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-ltinyxml2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libtf.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libtf2_ros.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libactionlib.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libmessage_filters.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libroscpp.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_filesystem",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libxmlrpcpp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libtf2.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libroscpp_serialization.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole_log4cxx.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole_backend_interface.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-llog4cxx",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_regex",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/librostime.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/opt/ros/melodic/lib/libcpp_common.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lBulletSoftBody",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lBulletDynamics",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lBulletCollision",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lLinearMath",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lSimTKsimbody",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lSimTKmath",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lSimTKcommon",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lblas",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-llapack",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lrt",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_client",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_gui",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_sensors",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_rendering",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_physics",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_ode",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_transport",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_msgs",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_util",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_common",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_gimpact",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_opcode",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lgazebo_opende_ou",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_signals",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_iostreams",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lprotobuf",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lsdformat",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lOgreMain",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lOgreTerrain",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lOgrePaging",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libprotobuf.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libignition-math4.so.4.0.0",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libuuid.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-luuid",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libswscale.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lswscale",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libavdevice.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lavdevice",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libavformat.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lavformat",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libavcodec.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lavcodec",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libavutil.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lavutil",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "RFID_antenna_plugin",
+	"nameOnDisk" : "libRFID_antenna_plugin.so",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/antenna.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: RFID_tag_plugin
+Description: Description of RFID_tag_plugin
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -48,7 +48,7 @@ public:
 class Spawner{
 public:
     int tag_quantity;
-    Tag tags[MAX_TAGS];
+    //Tag tags[MAX_TAGS];
 
     void load_config_data(){
          string package_config_path = ros::package::getPath("gazebo_to_ros_tf");
@@ -160,6 +160,7 @@ public:
     }
 
     void spawn_fixtures(Spawner *spawn){
+        Tag tags[100];
         Fixture *fixtures = spawn->read_map_from_file();
         int idx = 1;
         int tag_counter= 0;
@@ -167,20 +168,19 @@ public:
             gazebo_msgs::SpawnModel fix = spawn->model_structure(fixtures[idx].name , fixtures[idx].x, fixtures[idx].y, fixtures[idx].z);
             spawn->file_manager(fix, path_fix);
             spawn->spawn_obj(fix);
-            spawn->spawn_tags(fixtures[idx].x, fixtures[idx].y, fixtures[idx].z, spawn, &tag_counter);
+            spawn->spawn_tags(fixtures[idx].x, fixtures[idx].y, fixtures[idx].z, spawn, &tag_counter, tags);
             cout << "fixture " << fixtures[idx].name << " is spawning " <<endl;
             idx++;
             sleep(0.1);
         }
         cout << "tag quantity is "<< spawn->tag_quantity << endl;
-        spawn->spawn_frames(spawn->tag_quantity);
+        spawn->spawn_frames(spawn->tag_quantity, tags);
     }
 
-    void spawn_frames(int n){
+    void spawn_frames(int n, Tag *tags){
         Spawner tag_spawner;
         ros::NodeHandle node;
         ros::Rate rate(20.0);
-
         while(node.ok()){
             int idx=0;
             while(idx<n){
@@ -192,7 +192,7 @@ public:
         }
     }
 
-    void spawn_tags(float x, float y, float z, Spawner *tag_spawner, int* tag_count){
+    void spawn_tags(float x, float y, float z, Spawner *tag_spawner, int* tag_count, Tag *tags){
         int idx=1;
         while (idx <= tags_for_fix){
             //srand( (unsigned)time( NULL ) );  //for creating psuedorandom var.

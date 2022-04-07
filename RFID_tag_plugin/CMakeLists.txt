@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(RFID_tag_plugin)
 set(CMAKE_PREFIX_PATH _PATH "/opt/ros/melodic;${CMAKE_MODULE_PATH}")
-add_subdirectory(third_party/yaml-cpp)
+#add_subdirectory(third_party/yaml-cpp)
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 

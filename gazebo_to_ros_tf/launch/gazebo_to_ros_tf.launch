@@ -54,7 +54,7 @@
 		type="static_transform_publisher"
 		name="link1_broadcaster14"
 		args="5 2 -0.2 0 0 0 diptera_antenna_left edge_cone_point_left 100" />-->
-	<node pkg="tf" type="static_transform_publisher" name="camera_origin" args="0 0 0 1.57 3.15 1.57 base_link_sim camera_link 100"/>
-	<node pkg="tf" type="static_transform_publisher" name="camera_originz" args="0 0 0 0 0 0 base_link_sim camera_pink 100"/>
+	<node pkg="tf" type="static_transform_publisher" name="camera_origin" args="0 0 0 1.57 3.15 1.57 base_link camera_link 100"/>
+	<node pkg="tf" type="static_transform_publisher" name="camera_originz" args="0 0 0 0 0 0 base_link camera_pink 100"/>
 
 </launch>

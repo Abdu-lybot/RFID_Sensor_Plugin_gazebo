@@ -4,7 +4,6 @@ odom_frame_name: "odom_sim"
 baselink_frame_name: "base_link_sim"
 
 ########################### robot odometry topic ##########################
-#odomtopic: "/mavros/local_position/pose"
 odomtopic: "/odom"
 
 

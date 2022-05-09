@@ -160,7 +160,7 @@ public:
     }
 
     void spawn_fixtures(Spawner *spawn){
-        Tag tags[100];
+        Tag tags[MAX_TAGS];
         Fixture *fixtures = spawn->read_map_from_file();
         int idx = 1;
         int tag_counter= 0;

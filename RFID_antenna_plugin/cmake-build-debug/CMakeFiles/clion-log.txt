@@ -1,4 +1,4 @@
-/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -G Ninja /home/lybot/ground_robot_sim/src/RFID_antenna_plugin
+/snap/clion/189/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/189/bin/ninja/linux/ninja -G Ninja -S /home/lybot/ground_robot_sim/src/RFID_antenna_plugin -B /home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug
 -- Using CATKIN_DEVEL_PREFIX: /home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug/devel
 -- Using CMAKE_PREFIX_PATH: _PATH;/opt/ros/melodic;
 -- This workspace overlays: /opt/ros/melodic
@@ -38,13 +38,13 @@ CMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:48 (c
 -- catkin 0.7.29
 -- BUILD_SHARED_LIBS is on
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
-CMake Warning (dev) at /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+CMake Warning (dev) at /snap/clion/189/bin/cmake/linux/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
   The package name passed to `find_package_handle_standard_args` (PkgConfig)
   does not match the name of the calling package (gazebo).  This can lead to
   problems in calling code that expects `find_package` result variables
   (e.g., `_FOUND`) to follow a certain pattern.
 Call Stack (most recent call first):
-  /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake:70 (find_package_handle_standard_args)
+  /snap/clion/189/bin/cmake/linux/share/cmake-3.22/Modules/FindPkgConfig.cmake:99 (find_package_handle_standard_args)
   /usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake:30 (include)
   CMakeLists.txt:23 (find_package)
 This warning is for project developers.  Use -Wno-dev to suppress it.
@@ -55,7 +55,7 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- Looking for OGRE...
 -- Found Ogre Ghadamon (1.9.0)
 -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
-CMake Warning (dev) at /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake:1481 (if):
+CMake Warning (dev) at /snap/clion/189/bin/cmake/linux/share/cmake-3.22/Modules/FindBoost.cmake:1511 (if):
   Policy CMP0054 is not set: Only interpret if() arguments as variables or
   keywords when unquoted.  Run "cmake --help-policy CMP0054" for policy
   details.  Use the cmake_policy command to set the policy and suppress this
@@ -65,7 +65,7 @@ CMake Warning (dev) at /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/
   policy is set to NEW.  Since the policy is not set the OLD behavior will be
   used.
 Call Stack (most recent call first):
-  /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake:2087 (_Boost_MISSING_DEPENDENCIES)
+  /snap/clion/189/bin/cmake/linux/share/cmake-3.22/Modules/FindBoost.cmake:2117 (_Boost_MISSING_DEPENDENCIES)
   /usr/share/OGRE/cmake/modules/FindOGRE.cmake:318 (find_package)
   /usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake:175 (find_package)
   CMakeLists.txt:23 (find_package)

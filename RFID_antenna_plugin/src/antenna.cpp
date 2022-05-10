@@ -15,6 +15,7 @@
 
 #define MAX_TAGS 1000
 #define MAX_DETECTION_RANGE 10
+#define MAX_PLUGINS 20
 #define PI 3.1415
 using namespace std;
 
@@ -31,6 +32,7 @@ static string path_purple_tag;
 static string name_spawned_obj;
 static string target_frame;
 static string source_frame;
+static string world_frame = "odom_sim";
 
 
 enum Tag_colors{
@@ -45,7 +47,8 @@ class Tag{
 public:
     string name;
     int id;
-    float x, y, z;
+    float x_world, y_world, z_world;
+    float x_antenna, y_antenna, z_antenna;
     Tag_colors color;
     bool spawned {false};
     bool exists {false};
@@ -62,11 +65,14 @@ public:
     void set_exist(Tag *tag, bool condition){
         tag->exists = condition;
     }
-    void init_tag(Tag *tag, string tag_name, float x, float y, float z){
+    void init_tag(Tag *tag, string tag_name, float x_world, float y_world, float z_world, float x_antenna, float y_antenna, float z_antenna){
         tag->name = tag_name;
-        tag->x = x;
-        tag->y = y;
-        tag->z = z;
+        tag->x_world = x_world;
+        tag->y_world = y_world;
+        tag->z_world = z_world;
+        tag->x_antenna = x_antenna;
+        tag->y_antenna = y_antenna;
+        tag->z_antenna = z_antenna;
     }
     float calculate_distance(float x, float y, float z){
         float d = sqrt(x*x + y*y);
@@ -245,7 +251,7 @@ public:
          Antenna antenna{};
          cout << "tag with coulor " << paint_color <<endl;
          string path {antenna.get_color_path_from_sdf(paint_color)};
-         gazebo_msgs::SpawnModel detected_tag = spawn->model_structure(t->name, t->x, t->y, t->z);
+         gazebo_msgs::SpawnModel detected_tag = spawn->model_structure(t->name, t->x_world, t->y_world, t->z_world);
          spawn->file_manager(detected_tag, path);
          spawn->spawn_obj(detected_tag);
          t->set_spawned(t,true);
@@ -273,33 +279,35 @@ public:
              return purple;
          }
      }
-     void antenna_start(Spawner *spawn){
+     void antenna_start(){
+         Spawner spawn;
          sleep(10);
          load_config_data();
          Tag tag[MAX_TAGS];
          Antenna antenna{};
          //antenna.antenna_id = Back;
          ros::NodeHandle node;
-         tf2_ros::Buffer tfBuffer;
-         tf2_ros::TransformListener listen(tfBuffer);
-         geometry_msgs::TransformStamped tf;
+         tf2_ros::Buffer tfBuffer, tfBuffer2;
+         tf2_ros::TransformListener listen(tfBuffer),listen2(tfBuffer2);
+         geometry_msgs::TransformStamped tf_tag_antenna, tf_tag_world;
          ros::Rate rate(20.0);
          while(node.ok()){
              try{
                  for(int idx = 0; idx < MAX_TAGS ;idx++){
-                     tf = tfBuffer.lookupTransform(target_frame + to_string(antenna_id), source_frame+ to_string(idx+1),ros::Time(0));
-                     if(tf.transform.translation.x){
+                     tf_tag_antenna = tfBuffer.lookupTransform(target_frame + to_string(antenna_id), source_frame+ to_string(idx+1),ros::Time(0));
+                     tf_tag_world = tfBuffer2.lookupTransform(world_frame, source_frame+ to_string(idx+1),ros::Time(0));
+                     if(tf_tag_antenna.transform.translation.x){
                          tag->set_exist(&tag[idx], true);
-                         tag->init_tag(&tag[idx], name_construct(idx, static_cast<antenna_orientation>(antenna_id)), tf.transform.translation.x, tf.transform.translation.y, tf.transform.translation.z);
-                         if(tag->in_range(tag[idx].x,tag[idx].y, tag[idx].z)){
-                             double call_elevation_h = antenna.get_call_elevation_h(tag[idx].x,tag[idx].y, tag[idx].z);
-                             double call_elevation_v = antenna.get_call_elevation_v(tag[idx].x,tag[idx].y, tag[idx].z);
-                             float dist = tag->calculate_distance(tag[idx].x,tag[idx].y, tag[idx].z);
+                         tag->init_tag(&tag[idx], name_construct(idx, static_cast<antenna_orientation>(antenna_id)), tf_tag_world.transform.translation.x, tf_tag_world.transform.translation.y, tf_tag_world.transform.translation.z, tf_tag_antenna.transform.translation.x, tf_tag_antenna.transform.translation.y, tf_tag_antenna.transform.translation.z);
+                         if(tag->in_range(tag[idx].x_antenna,tag[idx].y_antenna, tag[idx].z_antenna)){
+                             double call_elevation_h = antenna.get_call_elevation_h(tag[idx].x_antenna,tag[idx].y_antenna, tag[idx].z_antenna);
+                             double call_elevation_v = antenna.get_call_elevation_v(tag[idx].x_antenna,tag[idx].y_antenna, tag[idx].z_antenna);
+                             float dist = tag->calculate_distance(tag[idx].x_antenna,tag[idx].y_antenna, tag[idx].z_antenna);
                              double pdf = antenna.pdf(dist, call_elevation_h, call_elevation_v);
                              if (antenna.pdf_threshold(pdf) && !tag[idx].spawned){
                                  printf("Tag %d at has a probability of %lf",idx,pdf);
                                  printf("Horizontal call_elevation angle: %lf, Vertical call_elevation angle %lf", call_elevation_h, call_elevation_v);
-                                 spawn_tag(&tag[idx], spawn, get_colour_from_sdf());
+                                 spawn_tag(&tag[idx], &spawn, get_colour_from_sdf());
                              }
 
                          }else{
@@ -321,10 +329,11 @@ public:
          }
      }
  };
+
 namespace gazebo{
-    class RFID_ANTENNA:public SensorPlugin{
+    class RFID_Antenna:public SensorPlugin{
     public:
-        RFID_ANTENNA():SensorPlugin(){
+        RFID_Antenna():SensorPlugin(){
             printf("############################################################################################################################################\n");
             printf("############################################################################################################################################\n");
             printf("Antenna Plugin has started!\n");
@@ -381,13 +390,16 @@ namespace gazebo{
             }
                 printf("############################################################################################################################################\n");
                 printf("############################################################################################################################################\n");
-            auto *go = new Spawner();
-            thread th(&Spawner::antenna_start,go,go);
+            int idx = rand() % 100 +1;
+            Spawner *go = new Spawner[MAX_PLUGINS]();
+//            thread th(&Spawner::antenna_start,go,go);
+            Spawner spawn2{};
+            thread th(&Spawner::antenna_start,spawn2);
             th.detach();
-            delete go;
+            //delete go;
             }
     };
-    GZ_REGISTER_SENSOR_PLUGIN(RFID_ANTENNA)
+    GZ_REGISTER_SENSOR_PLUGIN(RFID_Antenna)
 };
 
 // int main(int argc, char ** argv){

@@ -150,7 +150,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug/third_party/yaml-cpp/cmake_install.cmake")
   include("/home/lybot/ground_robot_sim/src/RFID_antenna_plugin/cmake-build-debug/gtest/cmake_install.cmake")
 
 endif()

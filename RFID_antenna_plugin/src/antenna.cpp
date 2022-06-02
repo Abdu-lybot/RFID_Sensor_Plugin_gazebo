@@ -303,7 +303,7 @@ public:
          tf2_ros::Buffer tfBuffer, tfBuffer2;
          tf2_ros::TransformListener listen(tfBuffer),listen2(tfBuffer2);
          geometry_msgs::TransformStamped tf_tag_antenna, tf_tag_world;
-         ros::Rate rate(20.0);
+         ros::Rate rate(1.0);
          while(node.ok()){
              try{
                  for(int idx = 0; idx < MAX_TAGS ;idx++){
@@ -337,7 +337,7 @@ public:
              }
              catch(tf2::TransformException ex){
                  ROS_ERROR("%s", ex.what());
-                 ros::Duration(1.0).sleep();
+                 //ros::Duration(1.0).sleep();
                  continue;
              }
          }

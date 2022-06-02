@@ -12,6 +12,7 @@
 #include <yaml-cpp/yaml.h>
 #include <ros/package.h>
 #include <iostream>
+#include <std_msgs/String.h>
 
 #define MAX_TAGS 1000
 #define MAX_DETECTION_RANGE 10
@@ -97,6 +98,7 @@ enum antenna_orientation{
 class Antenna{
 public:
     antenna_orientation antenna_id;
+    int start_delay {10};
 
     string get_color_path_from_sdf(Tag_colors colour) {
         string path;
@@ -279,14 +281,25 @@ public:
              return purple;
          }
      }
+     void publish_detected_tags (Tag *tag, ros::Publisher detected_tag_pub){
+         geometry_msgs::PoseStamped tag_info;
+         tag_info.header.frame_id = tag->name;
+         tag_info.header.stamp = ros::Time::now();
+         tag_info.pose.position.x = tag->x_world;
+         tag_info.pose.position.y = tag->y_world;
+         tag_info.pose.position.z = tag->z_world;
+         detected_tag_pub.publish(tag_info);
+     }
      void antenna_start(){
          Spawner spawn;
-         sleep(10);
          load_config_data();
          Tag tag[MAX_TAGS];
          Antenna antenna{};
+         sleep(antenna.start_delay);
          //antenna.antenna_id = Back;
          ros::NodeHandle node;
+         ros::Publisher detected_tag_pub = node.advertise<geometry_msgs::PoseStamped>("detected_tags",1000);
+
          tf2_ros::Buffer tfBuffer, tfBuffer2;
          tf2_ros::TransformListener listen(tfBuffer),listen2(tfBuffer2);
          geometry_msgs::TransformStamped tf_tag_antenna, tf_tag_world;
@@ -308,6 +321,7 @@ public:
                                  printf("Tag %d at has a probability of %lf",idx,pdf);
                                  printf("Horizontal call_elevation angle: %lf, Vertical call_elevation angle %lf", call_elevation_h, call_elevation_v);
                                  spawn_tag(&tag[idx], &spawn, get_colour_from_sdf());
+                                 publish_detected_tags(&tag[idx], detected_tag_pub);
                              }
 
                          }else{

@@ -332,12 +332,13 @@ public:
                          tag->set_spawned(&tag[idx], false);
                          //printf("RFID tag num %d does not exist\n", idx+1);
                      }
-                     rate.sleep();
                  }
+                 rate.sleep();
              }
              catch(tf2::TransformException ex){
                  ROS_ERROR("%s", ex.what());
                  //ros::Duration(1.0).sleep();
+                 rate.sleep();
                  continue;
              }
          }

@@ -187,7 +187,7 @@ public:
                 //cout << "check array of tags "<< tags[idx].name <<endl;
                 tag_spawner.spawn_transform(tags[idx].name , tags[idx].x, tags[idx].y, tags[idx].z);
                 idx++;
-                rate.sleep();
+                //rate.sleep();
             }
         }
     }
